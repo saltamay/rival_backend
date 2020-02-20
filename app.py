@@ -2,7 +2,7 @@ from flask import Flask, request, jsonify, abort
 from flask_cors import CORS
 from flask_api import status
 
-from models import setup_db
+from models import setup_db, Bootcamp, Course
 from bootcamp import get_bootcamps
 
 
@@ -28,7 +28,7 @@ def test():
 
 @app.route('/api/v1/bootcamps', methods=['GET'])
 def bootcamps():
-    bootcamps = get_bootcamps()
+    bootcamps = Bootcamp.query.all()
 
     if len(bootcamps) == 0:
         abort(404)
