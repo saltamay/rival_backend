@@ -12,6 +12,7 @@ flask = "*"
 flask-sqlalchemy = "*"
 flask-cors = "*"
 gunicorn = "*"
+python-dotenv = "*"
 
 [requires]
 python_version = "3.7"
