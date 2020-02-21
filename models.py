@@ -1,14 +1,7 @@
 from flask_sqlalchemy import SQLAlchemy
 import os
-from dotenv import load_dotenv
 
-# load dotenv in the base root
-# refers to application_top
-basedir = os.path.join(os.path.dirname(__file__), '..')
-dotenv_path = os.path.join(basedir, '.env')
-load_dotenv(dotenv_path)
-
-db_path = os.getenv('DEV_DATABASE_URI')
+db_path = os.getenv('DATABASE_URL')
 
 db = SQLAlchemy()
 
