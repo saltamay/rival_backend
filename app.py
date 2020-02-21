@@ -338,3 +338,50 @@ def delete_course_by_id(payload, id):
 # Default port:
 if __name__ == '__main__':
     app.run()
+
+
+# Error Handlers
+@app.errorhandler(404)
+def not_found(error):
+    return jsonify({
+        "success": False,
+        "error": 404,
+        "message": "Not found"
+    }), 404
+
+
+@app.errorhandler(422)
+def unprocessable(error):
+    return jsonify({
+        "success": False,
+        "error": 422,
+        "message": "Unprocessable"
+    }), 422
+
+
+@app.errorhandler(400)
+def bad_request(error):
+    return jsonify({
+        "success": False,
+        "error": 400,
+        "message": "Bad request"
+    }), 400
+
+
+@app.errorhandler(500)
+def internal_error(error):
+    return jsonify({
+        "success": False,
+        "error": 500,
+        "message": "Internal server error"
+    }), 500
+
+
+@app.errorhandler(AuthError)
+def handle_auth_error(auth_error):
+    print(auth_error.error)
+    return jsonify({
+        "success": False,
+        "error": auth_error.status_code,
+        "message": auth_error.error['message']
+    }), auth_error.status_code
