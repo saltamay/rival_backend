@@ -140,7 +140,9 @@ The collection is intended to make testing the endpoints easier by providing the
 
 If the JWT tokens are expired, refer to `.env` folder located at the root folder of this project. Tokens will be refreshed every 24 hours for testing.
 
-![Example]('/assets/collection_example.png)
+Example:
+
+![](https://github.com/saltamay/rival_backend/blob/master/assets/collection_example.png)
 
 ### Unit Tests
 
