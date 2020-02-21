@@ -61,7 +61,8 @@ def bootcamps():
 
     return data, status.HTTP_200_OK
 
-    '''
+
+'''
     POST /api/v1/bootcamps
         Returns status code 201 and
             json object { "success": True, "data": bootcamp}
