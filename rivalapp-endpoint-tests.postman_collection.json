@@ -1,0 +1,597 @@
+{
+	"info": {
+		"_postman_id": "436c40dd-212c-48d5-9cac-77efc4af4422",
+		"name": "rivalapp-endpoint-tests",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Admin - 201",
+			"item": [
+				{
+					"name": "https://rivalapp.herokuapp.com/api/v1/bootcamps",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"name\": \"Devcentral Bootcamp\",\r\n        \"description\": \"Is coding your passion? Codemasters will give you the skills and the tools to become the best developer possible. We specialize in front end and full stack web development\",\r\n        \"website\": \"https://devcentral.com\",\r\n        \"phone\": \"(444) 444-4444\",\r\n        \"email\": \"enroll@devcentral.com\",\r\n        \"address\": \"45 Upper College Rd Kingston RI 02881\",\r\n        \"careers\": [\r\n            \"Mobile Development\",\r\n            \"Web Development\",\r\n            \"Data Science\",\r\n            \"Business\"\r\n        ],\r\n        \"jobAssistance\": true\r\n    }"
+						},
+						"url": {
+							"raw": "https://rivalapp.herokuapp.com/api/v1/bootcamps",
+							"protocol": "https",
+							"host": [
+								"rivalapp",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"bootcamps"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "https://rivalapp.herokuapp.com/api/v1/courses",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"title\": \"IOS Development\",\r\n        \"description\": \"Get started building mobile applications for IOS using Swift and other tools\",\r\n        \"duration\": 8,\r\n        \"tuition\": 6000,\r\n        \"minimumSkill\": \"intermediate\",\r\n        \"scholarshipsAvailable\": false,\r\n        \"bootcampId\": 1\r\n    }"
+						},
+						"url": {
+							"raw": "https://rivalapp.herokuapp.com/api/v1/courses",
+							"protocol": "https",
+							"host": [
+								"rivalapp",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"courses"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlF6QTJSamt4UWpORU1UZzRSVFJGUmpjME5qWXlNRVJFTlVGRk1FVTVOekpETWpBM01EZzBNdyJ9.eyJpc3MiOiJodHRwczovL3JpdmFsYXBwLmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw1ZTQ5ZTg1MThhNDA5ZTBlNjIwMjg4ODciLCJhdWQiOlsicml2YWwiLCJodHRwczovL3JpdmFsYXBwLmF1dGgwLmNvbS91c2VyaW5mbyJdLCJpYXQiOjE1ODIzMTkyNjMsImV4cCI6MTU4MjQwNTY2MywiYXpwIjoiTTlXQWNsSTFxOVh4OVBDUTdvSUVxV0Y4czgwODdGamwiLCJzY29wZSI6Im9wZW5pZCBwcm9maWxlIGVtYWlsIiwicGVybWlzc2lvbnMiOlsiYWRkOmJvb3RjYW1wcyIsImFkZDpjb3Vyc2VzIiwiZGVsZXRlOmJvb3RjYW1wcyIsImRlbGV0ZTpjb3Vyc2VzIiwiZ2V0OmJvb3RjYW1wLWRldGFpbCIsImdldDpjb3Vyc2UtZGV0YWlsIiwidXBkYXRlOmJvb3RjYW1wcyIsInVwZGF0ZTpjb3Vyc2VzIl19.UA7GhafuMLUTlAyeqyaeI0aXSBH08O4cBBoiU_kY4-jHA3ugqIK1gHMxeBdbf71xjeX2dK4b9s0LYySKUNWr2cBfYYujoKPCivDLM9Pp61qXjSvgwlbx7SzjNCoCxmAM_YPBSyuqoo2oq0Wj024mPYf8oI1tYfd5AuAbzryr6xlcAfsuI7_Y2XPxlLPGQp5j45yXME2gxemppb9W52iHIMjvaCRYRLCT4kIRoxo4We96Vw9JVx5o2UssZew9fxi90uGzS9mT5gyzG0nc9-AHjxSKml0vmnELVQutyqyXU2aqmaVXFucJnuWRpDJ5MAY2exwbhGvDAhUOKAYP4KDhgw",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "5a40aa8e-f5c3-4105-ac86-1dcf41e58db1",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "92dd53f6-efe4-494e-886e-aecfc611df93",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status test\", function () {",
+							"    pm.response.to.have.status(201);",
+							"});"
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Public",
+			"item": [
+				{
+					"name": "https://rivalapp.herokuapp.com/api/v1/bootcamps",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlF6QTJSamt4UWpORU1UZzRSVFJGUmpjME5qWXlNRVJFTlVGRk1FVTVOekpETWpBM01EZzBNdyJ9.eyJpc3MiOiJodHRwczovL3JpdmFsYXBwLmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw1ZTQ5ZTg1MThhNDA5ZTBlNjIwMjg4ODciLCJhdWQiOlsicml2YWwiLCJodHRwczovL3JpdmFsYXBwLmF1dGgwLmNvbS91c2VyaW5mbyJdLCJpYXQiOjE1ODIyNDc3MTQsImV4cCI6MTU4MjMzNDExNCwiYXpwIjoiTTlXQWNsSTFxOVh4OVBDUTdvSUVxV0Y4czgwODdGamwiLCJzY29wZSI6Im9wZW5pZCBwcm9maWxlIGVtYWlsIiwicGVybWlzc2lvbnMiOlsiYWRkOmJvb3RjYW1wcyIsImFkZDpjb3Vyc2VzIiwiZGVsZXRlOmJvb3RjYW1wcyIsImRlbGV0ZTpjb3Vyc2VzIiwiZ2V0OmJvb3RjYW1wLWRldGFpbCIsImdldDpjb3Vyc2UtZGV0YWlsIiwidXBkYXRlOmJvb3RjYW1wcyIsInVwZGF0ZTpjb3Vyc2VzIl19.GXlMNFXS5lM7Wa03qKVOZKwt88Ncw84Vwyk9vUKOm4IscERP_QY9PlicUmuFUnsxXR4Hhki5FyHX5rldC-cCtuKbDps4VGG3ToONCD9wAJGk98epaUNx7Ys5uZgZGjDbXpOY0nG34t606j4Ublnd6PqEHTt-WC0LvCwYaxRzqQFQIHz56wlHSVRt4wI6RU8BNQiOpYMCTNmfOXprgckzna6fAwo_Zn4OEmkXQXwwJMrzi45fbzLIV3GrBgF_12i1jmIJkTry9PxOEZFS9rV9YcFisw-dFOv8YQTL049nqQTtLUt3WNUQrQPWkQBQ0Sj65KS54TQ1HtNYbdccvFZDaQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://rivalapp.herokuapp.com/api/v1/bootcamps",
+							"protocol": "https",
+							"host": [
+								"rivalapp",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"bootcamps"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "https://rivalapp.herokuapp.com/api/v1/courses",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlF6QTJSamt4UWpORU1UZzRSVFJGUmpjME5qWXlNRVJFTlVGRk1FVTVOekpETWpBM01EZzBNdyJ9.eyJpc3MiOiJodHRwczovL3JpdmFsYXBwLmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw1ZTQ5ZTg1MThhNDA5ZTBlNjIwMjg4ODciLCJhdWQiOlsicml2YWwiLCJodHRwczovL3JpdmFsYXBwLmF1dGgwLmNvbS91c2VyaW5mbyJdLCJpYXQiOjE1ODIyNDc3MTQsImV4cCI6MTU4MjMzNDExNCwiYXpwIjoiTTlXQWNsSTFxOVh4OVBDUTdvSUVxV0Y4czgwODdGamwiLCJzY29wZSI6Im9wZW5pZCBwcm9maWxlIGVtYWlsIiwicGVybWlzc2lvbnMiOlsiYWRkOmJvb3RjYW1wcyIsImFkZDpjb3Vyc2VzIiwiZGVsZXRlOmJvb3RjYW1wcyIsImRlbGV0ZTpjb3Vyc2VzIiwiZ2V0OmJvb3RjYW1wLWRldGFpbCIsImdldDpjb3Vyc2UtZGV0YWlsIiwidXBkYXRlOmJvb3RjYW1wcyIsInVwZGF0ZTpjb3Vyc2VzIl19.GXlMNFXS5lM7Wa03qKVOZKwt88Ncw84Vwyk9vUKOm4IscERP_QY9PlicUmuFUnsxXR4Hhki5FyHX5rldC-cCtuKbDps4VGG3ToONCD9wAJGk98epaUNx7Ys5uZgZGjDbXpOY0nG34t606j4Ublnd6PqEHTt-WC0LvCwYaxRzqQFQIHz56wlHSVRt4wI6RU8BNQiOpYMCTNmfOXprgckzna6fAwo_Zn4OEmkXQXwwJMrzi45fbzLIV3GrBgF_12i1jmIJkTry9PxOEZFS9rV9YcFisw-dFOv8YQTL049nqQTtLUt3WNUQrQPWkQBQ0Sj65KS54TQ1HtNYbdccvFZDaQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"name\": \"UofT SCS BootCamps\",\r\n        \"description\": \"University of Toronto School of Continuing Studies (UofT SCS) Boot Camps equip you with essential skills to help guide your path to success. With strategically engineered curricula, face-to-face interaction and expert instructors, we provide an educational experience that will shape the future of your career.\",\r\n        \"website\": \"bootcamp.learn.utoronto.ca\",\r\n        \"phone\": \"(647) 245-1020\",\r\n        \"email\": \"bootcamp@trilogyed.com\",\r\n        \"address\": \"158 St George St, Toronto, ON M5S 2V8\",\r\n        \"careers\": [\"Coding\", \"Data Analytics\",\r\n                    \"Cybersecurity\", \"UX/UI\", \"FinTech\"],\r\n        \"jobAssistance\": true\r\n    }"
+						},
+						"url": {
+							"raw": "https://rivalapp.herokuapp.com/api/v1/bootcamps/3",
+							"protocol": "https",
+							"host": [
+								"rivalapp",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"bootcamps",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "5a1ab484-4526-4345-af94-65c63827dcbc",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "2ef91bd3-2a83-40db-b9e7-32daf3516dfe",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status test\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "https://rivalapp.herokuapp.com/api/v1/bootcamps",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://rivalapp.herokuapp.com/api/v1/bootcamps",
+							"protocol": "https",
+							"host": [
+								"rivalapp",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"bootcamps"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "https://rivalapp.herokuapp.com/api/v1/courses",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://rivalapp.herokuapp.com/api/v1/courses",
+							"protocol": "https",
+							"host": [
+								"rivalapp",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"courses"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "https://rivalapp.herokuapp.com/api/v1/bootcamps/1",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://rivalapp.herokuapp.com/api/v1/bootcamps/1",
+							"protocol": "https",
+							"host": [
+								"rivalapp",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"bootcamps",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "https://rivalapp.herokuapp.com/api/v1/courses/1",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://rivalapp.herokuapp.com/api/v1/courses/1",
+							"protocol": "https",
+							"host": [
+								"rivalapp",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"courses",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlF6QTJSamt4UWpORU1UZzRSVFJGUmpjME5qWXlNRVJFTlVGRk1FVTVOekpETWpBM01EZzBNdyJ9.eyJpc3MiOiJodHRwczovL3JpdmFsYXBwLmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw1ZTRjNGYzNTUyYjE4YjBlODA1NGEzOTUiLCJhdWQiOlsicml2YWwiLCJodHRwczovL3JpdmFsYXBwLmF1dGgwLmNvbS91c2VyaW5mbyJdLCJpYXQiOjE1ODIzMTkyOTUsImV4cCI6MTU4MjQwNTY5NSwiYXpwIjoiTTlXQWNsSTFxOVh4OVBDUTdvSUVxV0Y4czgwODdGamwiLCJzY29wZSI6Im9wZW5pZCBwcm9maWxlIGVtYWlsIiwicGVybWlzc2lvbnMiOlsiZ2V0OmJvb3RjYW1wLWRldGFpbCIsImdldDpjb3Vyc2UtZGV0YWlsIl19.Mdm2GJd856zfivt3DxDIiWXjt_S_oM7m5J7rvrjgrPLd64OLUAvW8kt-bMjtuxG67CMeDJhbtRp-H5-AIpoYjkOFkMj-d_uwCJWswT5Pjw1Fii_pf8q0b_O1ENjM9r_pGjdRbe73LZ-on8GJOhilWvrFKSNwFW--qxZXgbMnEYxvNNMHbsFZvLngPFdZRIp0wT6nC4PQQWaYQVCygTgjTWQ-u56l6RhCn96LNzAcJKfUD84R3afyPEZfGWs6Z4VN9sQpAqDjKIb8NXbAmepHvffDpMo8R3tc-GGGLC_epYCeLkFl9weaDzOJUW_5k-lR51kXPBSb9sh9eMy3C1iXsA",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "690d23f8-45c9-46c3-a787-36b21b3c8b75",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "93969b31-5b5c-46e4-af24-76e81a02b29b",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status test\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Admin 200",
+			"item": [
+				{
+					"name": "https://rivalapp.herokuapp.com/api/v1/courses",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"name\": \"UofT SCS BootCamps\",\r\n        \"description\": \"University of Toronto School of Continuing Studies (UofT SCS) Boot Camps equip you with essential skills to help guide your path to success. With strategically engineered curricula, face-to-face interaction and expert instructors, we provide an educational experience that will shape the future of your career.\",\r\n        \"website\": \"bootcamp.learn.utoronto.ca\",\r\n        \"phone\": \"(647) 245-1020\",\r\n        \"email\": \"bootcamp@trilogyed.com\",\r\n        \"address\": \"158 St George St, Toronto, ON M5S 2V8\",\r\n        \"careers\": [\"Coding\", \"Data Analytics\",\r\n                    \"Cybersecurity\", \"UX/UI\", \"FinTech\"],\r\n        \"jobAssistance\": true\r\n    }"
+						},
+						"url": {
+							"raw": "https://rivalapp.herokuapp.com/api/v1/bootcamps/3",
+							"protocol": "https",
+							"host": [
+								"rivalapp",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"bootcamps",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "https://rivalapp.herokuapp.com/api/v1/bootcamps/1",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://rivalapp.herokuapp.com/api/v1/bootcamps/1",
+							"protocol": "https",
+							"host": [
+								"rivalapp",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"bootcamps",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "https://rivalapp.herokuapp.com/api/v1/courses/1",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://rivalapp.herokuapp.com/api/v1/courses/1",
+							"protocol": "https",
+							"host": [
+								"rivalapp",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"courses",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "https://rivalapp.herokuapp.com/api/v1/bootcamps",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://rivalapp.herokuapp.com/api/v1/bootcamps",
+							"protocol": "https",
+							"host": [
+								"rivalapp",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"bootcamps"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "https://rivalapp.herokuapp.com/api/v1/courses/1",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlF6QTJSamt4UWpORU1UZzRSVFJGUmpjME5qWXlNRVJFTlVGRk1FVTVOekpETWpBM01EZzBNdyJ9.eyJpc3MiOiJodHRwczovL3JpdmFsYXBwLmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw1ZTQ5ZTg1MThhNDA5ZTBlNjIwMjg4ODciLCJhdWQiOlsicml2YWwiLCJodHRwczovL3JpdmFsYXBwLmF1dGgwLmNvbS91c2VyaW5mbyJdLCJpYXQiOjE1ODIyNDc3MTQsImV4cCI6MTU4MjMzNDExNCwiYXpwIjoiTTlXQWNsSTFxOVh4OVBDUTdvSUVxV0Y4czgwODdGamwiLCJzY29wZSI6Im9wZW5pZCBwcm9maWxlIGVtYWlsIiwicGVybWlzc2lvbnMiOlsiYWRkOmJvb3RjYW1wcyIsImFkZDpjb3Vyc2VzIiwiZGVsZXRlOmJvb3RjYW1wcyIsImRlbGV0ZTpjb3Vyc2VzIiwiZ2V0OmJvb3RjYW1wLWRldGFpbCIsImdldDpjb3Vyc2UtZGV0YWlsIiwidXBkYXRlOmJvb3RjYW1wcyIsInVwZGF0ZTpjb3Vyc2VzIl19.GXlMNFXS5lM7Wa03qKVOZKwt88Ncw84Vwyk9vUKOm4IscERP_QY9PlicUmuFUnsxXR4Hhki5FyHX5rldC-cCtuKbDps4VGG3ToONCD9wAJGk98epaUNx7Ys5uZgZGjDbXpOY0nG34t606j4Ublnd6PqEHTt-WC0LvCwYaxRzqQFQIHz56wlHSVRt4wI6RU8BNQiOpYMCTNmfOXprgckzna6fAwo_Zn4OEmkXQXwwJMrzi45fbzLIV3GrBgF_12i1jmIJkTry9PxOEZFS9rV9YcFisw-dFOv8YQTL049nqQTtLUt3WNUQrQPWkQBQ0Sj65KS54TQ1HtNYbdccvFZDaQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://rivalapp.herokuapp.com/api/v1/courses/1",
+							"protocol": "https",
+							"host": [
+								"rivalapp",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"courses",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:5000/api/v1/bootcamps/1",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/bootcamps/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"bootcamps",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "Bootcamps.js:12 eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlF6QTJSamt4UWpORU1UZzRSVFJGUmpjME5qWXlNRVJFTlVGRk1FVTVOekpETWpBM01EZzBNdyJ9.eyJpc3MiOiJodHRwczovL3JpdmFsYXBwLmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw1ZTQ5ZTg1MThhNDA5ZTBlNjIwMjg4ODciLCJhdWQiOlsicml2YWwiLCJodHRwczovL3JpdmFsYXBwLmF1dGgwLmNvbS91c2VyaW5mbyJdLCJpYXQiOjE1ODIzMDkyNjQsImV4cCI6MTU4MjM5NTY2NCwiYXpwIjoiTTlXQWNsSTFxOVh4OVBDUTdvSUVxV0Y4czgwODdGamwiLCJzY29wZSI6Im9wZW5pZCBwcm9maWxlIGVtYWlsIiwicGVybWlzc2lvbnMiOlsiYWRkOmJvb3RjYW1wcyIsImFkZDpjb3Vyc2VzIiwiZGVsZXRlOmJvb3RjYW1wcyIsImRlbGV0ZTpjb3Vyc2VzIiwiZ2V0OmJvb3RjYW1wLWRldGFpbCIsImdldDpjb3Vyc2UtZGV0YWlsIiwidXBkYXRlOmJvb3RjYW1wcyIsInVwZGF0ZTpjb3Vyc2VzIl19.RcVrXAIuCsA-dFWJOmiwZ9ABg3n737UVErFY891NzM5Ot3sRlsdEuu8_AsuV8cW5rIaom_gU9TFeuisS4UghSqLfw9QEzCh_0gGNouHQwIReevnDRg58JtQPcMv1xRyDUE8LXmF5JyK8T78y8583g1E3AOJmHtNnkHwCpXlJYsKAvmN5iCmIzdHI-z0h3M81Z3LNx2feySKE9JPU0q80ZAfOzUFD97ZV2Gq7B0rORqcWve1AXL_TWbbasERYPcBbWMIZM9M0dYy1NVb28u9_adRktU5mPZNJPUQP-_Nfokky1BzXfDyOOu7JA6G7hV1PasCWgaXQrShTZNnunOoUPg",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "0808d0d4-808d-40fa-b857-cf1aea6b05ed",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "56167ec9-42c2-4c05-b774-f7c07ac9e59a",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status test\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "43a43b2d-5dca-47d1-abb2-f3910d1bbb3a",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "1ade8332-b9c2-4479-8a7d-b2350224c6de",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "de58daf3-6832-436d-9c54-773d1bb9a5e9",
+			"key": "host",
+			"value": "https://rivalapp.herokuapp.com/",
+			"type": "string"
+		}
+	],
+	"protocolProfileBehavior": {}
+}

@@ -321,7 +321,6 @@ def patch_course_by_id(id):
 '''
     DELETE /api/v1/courses/<int:id>
         Returns status code 200 and json object { "success": True }
-
         Access private
 '''
 
