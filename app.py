@@ -1,4 +1,5 @@
 from bootcamp import *
+from course import *
 from auth import AuthError, requires_auth
 from models import setup_db, Bootcamp, Course
 from flask import Flask, request, jsonify, abort
@@ -81,3 +82,28 @@ def bootcamp(payload):
         return data, status.HTTP_201_CREATED
     except BaseException:
         abort(422)
+
+
+'''
+    GET /api/v1/bootcamps/<int:id>
+        Returns status code 200 and
+            json object { "success": True, "data": bootcamp}
+            where bootcamp is the bootcamp with the id of id
+            that is defined within the query string
+        Access public
+'''
+
+
+@app.route('/api/v1/bootcamps/<int:id>', methods=['GET'])
+@requires_auth('get:bootcamp-detail')
+def get_bootcamp_by_id(payload, id):
+    bootcamp = get_single_bootcamp(id)
+
+    if bootcamp is None:
+        abort(404)
+
+    data = jsonify({
+        "success": True,
+        "data": bootcamp.format_long()
+    })
+    return data, status.HTTP_200_OK
