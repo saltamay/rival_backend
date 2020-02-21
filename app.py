@@ -1,4 +1,5 @@
 from bootcamp import *
+from auth import AuthError, requires_auth
 from models import setup_db, Bootcamp, Course
 from flask import Flask, request, jsonify, abort
 from flask_cors import CORS
@@ -68,8 +69,8 @@ def bootcamps():
 
 
 @app.route('/api/v1/bootcamps', methods=['POST'])
-# @requires_auth('add:bootcamps')
-def bootcamp():
+@requires_auth('add:bootcamps')
+def bootcamp(payload):
     try:
         new_bootcamp = add_bootcamp(request)
 

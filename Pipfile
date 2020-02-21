@@ -15,6 +15,7 @@ gunicorn = "*"
 python-dotenv = "*"
 psycopg2 = "*"
 flask-api = "*"
+python-jose = "*"
 
 [requires]
 python_version = "3.7"
