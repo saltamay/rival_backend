@@ -42,18 +42,18 @@ def get_greeting():
 '''
 
 
-# @app.route('/api/v1/bootcamps', methods=['GET'])
-# def bootcamps():
-#     bootcamps = Bootcamp.query.all()
+@app.route('/api/v1/bootcamps', methods=['GET'])
+def bootcamps():
+    bootcamps = get_bootcamps()
 
-#     if len(bootcamps) == 0:
-#         abort(404)
+    if len(bootcamps) == 0:
+        abort(404)
 
-#     bootcamps = [bootcamp.format_short() for bootcamp in bootcamps]
+    bootcamps = [bootcamp.format_short() for bootcamp in bootcamps]
 
-#     data = jsonify({
-#         "success": True,
-#         "data": bootcamps
-#     })
+    data = jsonify({
+        "success": True,
+        "data": bootcamps
+    })
 
-#     return data, status.HTTP_200_OK
+    return data, status.HTTP_200_OK
