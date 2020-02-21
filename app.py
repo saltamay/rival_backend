@@ -107,3 +107,234 @@ def get_bootcamp_by_id(payload, id):
         "data": bootcamp.format_long()
     })
     return data, status.HTTP_200_OK
+
+
+@app.route('/api/v1/bootcamps/<int:id>/courses', methods=['GET'])
+def get_bootcamp_courses(id):
+    courses = get_all_courses(id)
+
+    if courses is None:
+        abort(404)
+
+    courses = [course.format_long() for course in courses]
+
+    data = jsonify({
+        "success": True,
+        "data": courses
+    })
+    return data, status.HTTP_200_OK
+
+
+'''
+    PUT /api/v1/bootcamps/<int:id>
+        Returns status code 200 and
+            json object { "success": True, "data": bootcamp}
+            where bootcamp is the updated bootcamp with the id of id
+            that is defined within the query string
+        Access private
+'''
+
+
+@app.route('/api/v1/bootcamps/<int:id>', methods=['PUT'])
+@requires_auth('update:bootcamps')
+def update_bootcamp_by_id(payload, id):
+    try:
+        updated_bootcamp = update_bootcamp(request, id)
+
+        data = jsonify({
+            "success": True,
+            "data": updated_bootcamp.format_long()
+        })
+
+        return data, status.HTTP_200_OK
+    except Exception as ex:
+        print(ex.__class__.__name__)
+        if ex.__class__.__name__ == 'AttributeError':
+            abort(404)
+        else:
+            abort(422)
+
+
+@app.route('/api/v1/bootcamps/<int:id>', methods=['PATCH'])
+@requires_auth('update:bootcamps')
+def patch_bootcamp_by_id(id):
+    try:
+        updated_bootcamp = patch_bootcamp(request, id)
+        data = jsonify({
+            "success": True,
+            "data": updated_bootcamp.format_long()
+        })
+
+        return data, status.HTTP_200_OK
+    except Exception as ex:
+        print(ex.__class__.__name__)
+        if ex.__class__.__name__ == 'AttributeError':
+            abort(404)
+        else:
+            abort(422)
+
+
+'''
+    DELETE /api/v1/bootcamps/<int:id>
+        Returns status code 200 and json object { "success": True }
+
+        Access private
+'''
+
+
+@app.route('/api/v1/bootcamps/<int:id>', methods=['DELETE'])
+@requires_auth('delete:bootcamps')
+def delete_bootcamp_by_id(payload, id):
+    data = delete_bootcamp(id)
+
+    if data is None:
+        abort(404)
+
+    return data, status.HTTP_200_OK
+
+
+'''
+    GET /api/v1/courses
+        Returns status code 200 and
+            json object { "success": True, "data": courses}
+            where courses is the list of all courses
+        Access public
+'''
+
+
+@app.route('/api/v1/courses', methods=['GET'])
+def courses():
+    courses = get_courses()
+
+    if len(courses) == 0:
+        abort(404)
+
+    courses = [course.format_short() for course in courses]
+
+    data = jsonify({
+        "success": True,
+        "data": courses
+    })
+    return data, status.HTTP_200_OK
+
+
+'''
+    POST /api/v1/courses
+        Returns status code 201 and
+            json object { "success": True, "data": course}
+            where course is the newly create course
+        Access Private
+'''
+
+
+@app.route('/api/v1/courses', methods=['POST'])
+@requires_auth('add:courses')
+def course(payload):
+    try:
+        new_course = add_course(request)
+
+        data = jsonify({
+            "success": True,
+            "data": new_course.format_long()
+        })
+        return data, status.HTTP_201_CREATED
+    except BaseException:
+        abort(422)
+
+
+'''
+    GET /api/v1/courses/<int:id>
+        Returns status code 200 and
+            json object { "success": True, "data": course}
+            where course is the course with the id of id
+            that is defined within the query string
+        Access public
+'''
+
+
+@app.route('/api/v1/courses/<int:id>', methods=['GET'])
+@requires_auth('get:course-detail')
+def get_course_by_id(payload, id):
+    course = get_single_course(id)
+
+    if course is None:
+        abort(404)
+
+    data = jsonify({
+        "success": True,
+        "data": course.format_long()
+    })
+    return data, status.HTTP_200_OK
+
+
+'''
+    PUT /api/v1/courses/<int:id>
+        Returns status code 200 and
+            json object { "success": True, "data": course}
+            where course is the updated course with the id of id
+            that is defined within the query string
+        Access private
+'''
+
+
+@app.route('/api/v1/courses/<int:id>', methods=['PUT'])
+@requires_auth('update:courses')
+def update_course_by_id(payload, id):
+    try:
+        updated_course = update_course(request, id)
+
+        data = jsonify({
+            "success": True,
+            "data": updated_course.format_long()
+        })
+
+        return data, status.HTTP_200_OK
+    except Exception as ex:
+        print(ex.__class__.__name__)
+        if ex.__class__.__name__ == 'AttributeError':
+            abort(404)
+        else:
+            abort(422)
+
+
+@app.route('/api/v1/courses/<int:id>', methods=['PATCH'])
+@requires_auth('update:courses')
+def patch_course_by_id(id):
+    try:
+        updated_course = patch_course(request, id)
+        data = jsonify({
+            "success": True,
+            "data": updated_course.format_long()
+        })
+
+        return data, status.HTTP_200_OK
+    except Exception as ex:
+        print(ex.__class__.__name__)
+        if ex.__class__.__name__ == 'AttributeError':
+            abort(404)
+        else:
+            abort(422)
+
+
+'''
+    DELETE /api/v1/courses/<int:id>
+        Returns status code 200 and json object { "success": True }
+
+        Access private
+'''
+
+
+@app.route('/api/v1/courses/<int:id>', methods=['DELETE'])
+@requires_auth('delete:courses')
+def delete_course_by_id(payload, id):
+    data = delete_course(id)
+
+    if data is None:
+        abort(404)
+
+    return data, status.HTTP_200_OK
+
+
+# Default port:
+if __name__ == '__main__':
+    app.run()
