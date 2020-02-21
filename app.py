@@ -17,6 +17,7 @@ load_dotenv(dotenv_path)
 
 app = Flask(__name__)
 setup_db(app)
+CORS(app)
 
 
 @app.route('/', methods=['GET'])
