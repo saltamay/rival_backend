@@ -1,4 +1,4 @@
-from bootcamp import get_bootcamps
+from bootcamp import *
 from models import setup_db, Bootcamp, Course
 from flask import Flask, request, jsonify, abort
 from flask_cors import CORS
@@ -57,3 +57,26 @@ def bootcamps():
     })
 
     return data, status.HTTP_200_OK
+
+    '''
+    POST /api/v1/bootcamps
+        Returns status code 201 and
+            json object { "success": True, "data": bootcamp}
+            where bootcamp is the newly create bootcamp
+        Access Private
+'''
+
+
+@app.route('/api/v1/bootcamps', methods=['POST'])
+# @requires_auth('add:bootcamps')
+def bootcamp():
+    try:
+        new_bootcamp = add_bootcamp(request)
+
+        data = jsonify({
+            "success": True,
+            "data": new_bootcamp.format_long()
+        })
+        return data, status.HTTP_201_CREATED
+    except BaseException:
+        abort(422)
